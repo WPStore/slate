@@ -42,11 +42,11 @@ function slate_setup() {
 	require( get_template_directory() . '/includes/widgets/text-column.php' );
 	require( get_template_directory() . '/includes/widgets/recent-portfolio.php' );
 
+	// Add support for legacy widgets
+    add_theme_support( 'array_toolkit_legacy_widgets' );
+
 	/* Add default posts and comments RSS feed links to head */
 	add_theme_support( 'automatic-feed-links' );
-
-	/* Add editor styles */
-
 
 	/* Enable support for Post Thumbnails */
 	add_theme_support( 'post-thumbnails' );
@@ -104,10 +104,10 @@ function slate_scripts_styles() {
 	wp_enqueue_style( 'flex-css', get_template_directory_uri() . '/includes/js/flex/flexslider.css', array(), '0.1', 'screen' );
 
 	//Font Awesome CSS
-	wp_enqueue_style( 'font-awesome-css', get_template_directory_uri() . "/includes/fonts/fontawesome/font-awesome.css", array(), '0.1', 'screen' );
+	wp_enqueue_style( 'font-awesome-css', get_template_directory_uri() . "/includes/fonts/fontawesome/font-awesome.min.css", array(), '4.3.0', 'screen' );
 
 	//Google Merriweather Font
-	wp_enqueue_style( 'google-merriweather', 'http://fonts.googleapis.com/css?family=Merriweather:400,700' );
+	wp_enqueue_style( 'google-merriweather', '//fonts.googleapis.com/css?family=Merriweather:400,700' );
 
 	// Load Scripts
 

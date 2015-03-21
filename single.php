@@ -28,8 +28,8 @@ get_header(); ?>
 					<?php endwhile; ?>
 
 					<div class="blog-navigation">
-						<div class="alignleft"><?php previous_post_link('%link', 'Previous Post', TRUE); ?></div>
-						<div class="alignright"><?php next_post_link('%link', 'Next Post', TRUE); ?></div>
+						<div class="alignleft"><?php previous_post_link('%link', __( 'Previous Post', 'slate' ), TRUE); ?></div>
+						<div class="alignright"><?php next_post_link('%link', __( 'Next Post', 'slate' ), TRUE); ?></div>
 					</div>
 
 					<!-- Post navigation -->

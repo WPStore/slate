@@ -3,8 +3,8 @@ Contributors: array
 Donate link: https://array.is/
 Tags: blogging, portfolio, photo, video
 Requires at least: 3.8
-Tested up to: 3.9.1
-Stable tag: 4.2.1
+Tested up to: 4.1.1
+Stable tag: 4.2.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -36,6 +36,19 @@ Visit our support forum at array.is and we'll give you a hand.
 1. The theme home page filled with demo content.
 
 == Change Log ==
+= 4.2.5 - 3/13/15 =
+* Updated Font Awesome to the latest version.
+* Fixed an issue where the homepage customizer settings didn't work properly under certain conditions.
+
+= 4.2.4 - 3/9/15 =
+* Updated for the latest Array Toolkit.
+
+= 4.2.3 - 3/6/15 =
+* Fixed next/previous post translation strings.
+
+= 4.2.2 - 1/27/15 =
+* Fixed an issue with a missing HTML tag in the author archives.
+
 = 4.2.1 - 6/03/14 =
 * Changes to the Latest Updates screen.
 * Removed changelog.txt and moved change log information to readme.txt

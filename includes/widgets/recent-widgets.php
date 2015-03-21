@@ -77,7 +77,7 @@ class slate_recent_widgets extends WP_Widget {
 			<?php } ?>
 
 			<?php if( 0 != $popularcount ) { ?>
-				<li class="<?php echo $class; ?>"><a class="" href="#"></span><i class="fa fa-heart"></i></a></li>
+				<li class="<?php echo $class; ?>"><a class="" href="#"><i class="fa fa-heart"></i></a></li>
 			<?php } ?>
 
 			<?php if( 0 != $commentcount ) { ?>

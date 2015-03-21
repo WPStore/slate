@@ -14,6 +14,7 @@ get_header(); ?>
 						_e(' posts by ','slate');
 						$curauth = ( isset( $_GET['author_name'] ) ) ? get_user_by( 'slug', $author_name ) : get_userdata( intval( $author ) ); echo $curauth->nickname; ?>
 					</h2>
+				</div>
 
 				<div class="content">
 					<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
