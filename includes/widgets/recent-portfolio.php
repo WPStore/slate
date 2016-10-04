@@ -2,22 +2,32 @@
 /**
  * Recent Portfolio Widget Class
  */
+
+add_action( 'widgets_init', 'load_slate_recent_portfolio' );
+
+function load_slate_recent_portfolio() {
+	register_widget( 'slate_recent_portfolio' );
+} // END load_slate_recent_portfolio()
+
 class slate_recent_portfolio extends WP_Widget {
 
-	/** constructor */
-	function slate_recent_portfolio() {
-		parent::WP_Widget( false, $name = __( 'Slate Sidebar Portfolio Widget', 'slate' ) );
-	}
+	public function __construct() {
 
-	/** @see WP_Widget::widget */
-	function widget( $args, $instance ) {
+		parent::__construct(
+			false,
+			$name = __( 'Slate Sidebar Portfolio Widget', 'slate' )
+		);
+
+	} // END __construct()
+
+	public function widget( $args, $instance ) {
 		extract( $args );
 		global $posttypes;
-		$title 			= apply_filters( 'widget_title', $instance['title'] );
-		$number 		= apply_filters( 'widget_title', $instance['number'] );
+		$title  = apply_filters( 'widget_title', $instance['title'] );
+		$number = apply_filters( 'widget_title', $instance['number'] );
 
 		echo $before_widget;
-		if ( $title ) echo $before_title . $title . $after_title; ?>
+		if ( $title ) { echo $before_title . $title . $after_title; } ?>
 
 		<div id="portfolio-sidebar" class="portfolio-sidebar flexslider">
 
@@ -39,23 +49,23 @@ class slate_recent_portfolio extends WP_Widget {
 				<?php wp_reset_postdata(); ?>
 			</ul>
 		</div>
-
-
 		<?php echo $after_widget;
 
-	}
+	} // END widget()
 
-	/** @see WP_Widget::update */
-	function update( $new_instance, $old_instance ) {
+	public function update( $new_instance, $old_instance ) {
+
 		global $posttypes;
-		$instance = $old_instance;
-		$instance['title'] = strip_tags( $new_instance['title'] );
-		$instance['number'] = strip_tags( $new_instance['number'] );
-		return $instance;
-	}
 
-	/** @see WP_Widget::form */
-	function form( $instance ) {
+		$instance           = $old_instance;
+		$instance['title']  = strip_tags( $new_instance['title'] );
+		$instance['number'] = strip_tags( $new_instance['number'] );
+
+		return $instance;
+
+	} // END update()
+
+	public function form( $instance ) {
 
 		$posttypes = get_post_types( '', 'objects' );
 
@@ -72,9 +82,7 @@ class slate_recent_portfolio extends WP_Widget {
 			<input class="widefat" id="<?php echo $this->get_field_id( 'number' ); ?>" name="<?php echo $this->get_field_name( 'number' ); ?>" type="text" value="<?php echo esc_attr( $number ); ?>" />
 		</p>
 		<?php
-	}
 
+	} // END form()
 
-} // class
-// register Recent Posts widget
-add_action( 'widgets_init', create_function( '', 'return register_widget( "slate_recent_portfolio" );' ) );
+} // END class slate_recent_portfolio

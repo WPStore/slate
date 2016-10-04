@@ -7,11 +7,12 @@ add_action( 'widgets_init', 'load_slate_recent_widgets' );
 
 function load_slate_recent_widgets() {
 	register_widget( 'slate_recent_widgets' );
-}
+} // END load_slate_recent_widgets()
 
 class slate_recent_widgets extends WP_Widget {
 
-	function slate_recent_widgets() {
+	public function __construct() {
+
 		$widget_ops = array(
 			'classname'   => 'slate-recent-posts',
 			'description' => __( 'A tabbed widget for displaying recent posts, popular posts, recent comments, and a tag cloud.', 'slate' )
@@ -21,10 +22,17 @@ class slate_recent_widgets extends WP_Widget {
 			'height'  => 350,
 			'id_base' => 'slate-recent-widgets'
 		);
-		$this->WP_Widget( 'slate-recent-widgets', __( 'Slate Recent Posts Widget', 'slate' ), $widget_ops, $control_ops );
-	}
 
-	function widget( $args, $instance ) {
+		parent::__construct(
+			'slate-recent-widgets',
+			__( 'Slate Recent Posts Widget', 'slate' ),
+			$widget_ops,
+			$control_ops
+		);
+
+	} // END __construct()
+
+	public function widget( $args, $instance ) {
 		extract( $args );
 		$recentcount  = $instance['recentcount'];
 		$popularcount = $instance['popularcount'];
@@ -34,16 +42,16 @@ class slate_recent_widgets extends WP_Widget {
 		$count = 0;
 
 		if( 0 != $recentcount )
-			$count++;
+			{ $count++; }
 
 		if( 0 != $popularcount )
-			$count++;
+			{ $count++; }
 
 		if( 0 != $commentcount )
-			$count++;
+			{ $count++; }
 
 		if( 0 != $tagcount )
-			$count++;
+			{ $count++; }
 
 		$class = '';
 
@@ -176,18 +184,18 @@ class slate_recent_widgets extends WP_Widget {
 
 <?php
 		echo $after_widget;
-	}
+	} // END widget()
 
-	function update( $new_instance, $old_instance ) {
+	public function update( $new_instance, $old_instance ) {
 		$instance = $old_instance;
 		$instance['recentcount']  = $new_instance['recentcount'];
 		$instance['commentcount'] = $new_instance['commentcount'];
 		$instance['popularcount'] = $new_instance['popularcount'];
 		$instance['tagcount']     = $new_instance['tagcount'];
 		return $instance;
-	}
+	} // END update()
 
-	function form($instance) {
+	public function form( $instance ) {
 		$instance = wp_parse_args( (array) $instance, array( 'title' => '', 'recenttitle' => '', 'recentcount' => '', 'commentcount' => '', 'popularcount' => '', 'tagcount' => '' ) );
 		$instance['recentcount']  = $instance['recentcount'];
 		$instance['commentcount'] = $instance['commentcount'];
@@ -218,5 +226,6 @@ class slate_recent_widgets extends WP_Widget {
 			</p>
 
   <?php
-	}
-}
+	} // END form()
+
+} // END class slate_recent_widgets

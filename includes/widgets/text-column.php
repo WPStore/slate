@@ -7,25 +7,32 @@ add_action( 'widgets_init', 'load_slate_text_column_widget' );
 
 function load_slate_text_column_widget() {
 	register_widget( 'slate_text_column' );
-}
+} // END load_slate_text_column_widget()
 
 class slate_text_column extends WP_Widget {
 
-	function slate_text_column() {
+	public function __construct() {
+
 		$widget_ops = array(
 			'classname'   => 'slate-text-column',
 			'description' => __( 'Slate Text Column Widget', 'slate' )
-			);
+		);
 		$control_ops = array(
 			'width'   => 200,
 			'height'  => 350,
 			'id_base' => 'slate-text-column'
-			);
-		$this->WP_Widget( 'slate-text-column', __( 'Slate Text Column', 'slate'), $widget_ops, $control_ops );
-	}
+		);
 
+		parent::__construct(
+			'slate-text-column',
+			__( 'Slate Text Column', 'slate'),
+			$widget_ops,
+			$control_ops
+		);
 
-	function widget( $args, $instance ) {
+	} // END __construct()
+
+	public function widget( $args, $instance ) {
 
 		extract( $args );
 		$columntitle     = $instance['column_title'];
@@ -55,18 +62,19 @@ class slate_text_column extends WP_Widget {
 
 <?php
 		echo $after_widget;
-	}
 
-	function update( $new_instance, $old_instance ) {
-		$instance = $old_instance;
+	} // END widget()
+
+	public function update( $new_instance, $old_instance ) {
+		$instance                      = $old_instance;
 		$instance['column_title']      = $new_instance['column_title'];
 		$instance['column_title_link'] = $new_instance['column_title_link'];
 		$instance['column_icon']       = $new_instance['column_icon'];
 		$instance['column_content']    = $new_instance['column_content'];
 		return $instance;
-	}
+	} // END update()
 
-	function form($instance) {
+	public function form( $instance ) {
 		$instance = wp_parse_args( (array) $instance, array(
 			'title'             => '',
 			'column_title'      => '',
@@ -99,6 +107,8 @@ class slate_text_column extends WP_Widget {
 				<label for="<?php echo $this->get_field_id( 'column_content' ); ?>"><?php _e( 'Column Content', 'slate' ); ?>:
 				<textarea class="widefat" rows="8" cols="20" id="<?php echo $this->get_field_id( 'column_content' ); ?>" name="<?php echo $this->get_field_name( 'column_content' ); ?>"><?php echo $instance['column_content']; ?></textarea>
 			</p>
-<?php
-	}
-}
+		<?php
+
+	} // END form()
+
+} // END class slate_text_column
