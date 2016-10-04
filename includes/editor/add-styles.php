@@ -69,5 +69,3 @@ function themeit_add_editor_style() {
   add_editor_style( 'style-editor.css' );
 }
 add_action( 'after_setup_theme', 'themeit_add_editor_style' );
-
-?>

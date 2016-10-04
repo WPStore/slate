@@ -311,6 +311,6 @@ add_action( 'delete_post',   'slate_delete_transients' );
 function slate_portfolio_archive_query( $query ) {
 
 	if ( is_post_type_archive( 'array-portfolio' ) )
-		$query->set( 'posts_per_page', 12 );
+		{ $query->set( 'posts_per_page', 12 ); }
 }
 add_action( 'pre_get_posts', 'slate_portfolio_archive_query' );

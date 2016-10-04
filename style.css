@@ -1,13 +1,32 @@
 /*
-Theme Name: Slate
-Theme URI: https://array.is/themes/slate-wordpress-theme/
+Theme Name:  Slate
+Theme URI:   https://gitlab.com/wpstore-themes/slate
 Description: A super clean responsive theme for showing off your latest projects.
-Author: Array
-Author URI: https://array.is
-Version: 4.2.6
-Tags: white, two-columns, fixed-width, custom-header, custom-background, threaded-comments
-License: GNU General Public License v2 or later
+Author:      WP-Store.io
+Author URI:  https://www.wp-store.io
+Version:     5.0.0
+Tags:        white, two-columns, fixed-width, custom-header, custom-background, threaded-comments
+License:     GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: slate
+Domain Path: /languages
+
+    Slate
+    Copyright (C) 2016 WPStore.io (https://www.wp-store.io)
+    Copyright (C) 2012-2016, Array (https://arraythemes.com/)
+
+    This program is free software; you can redistribute it and/or
+	modify it under the terms of the GNU General Public License
+	as published by the Free Software Foundation; either version 2
+	of the License, or (at your option) any later version.
+
+	This program is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU General Public License for more details.
+
+	You should have received a copy of the GNU General Public License
+	along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
 body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, input, textarea, p, blockquote, th, td {
