@@ -11,20 +11,7 @@ jQuery(document).ready(function ($) {
 		});
 	});
 
-	// Show license tab after settings saved
-	if(window.location.href.indexOf("settings-updated=true") > -1) {
-		$('.inline-list-links li').removeClass('current');
-		$('.panel').hide();
-
-		$('.license-tab').addClass('current');
-		$('#license-panel').show();
-
-		$('html, body').animate({
-	        scrollTop: $(".panels").offset().top
-	    }, 300);
-	}
-
-	//FitVids
+	// FitVids
 	$(".arrayvideo").fitVids();
 
 });

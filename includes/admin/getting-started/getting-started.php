@@ -43,10 +43,6 @@ add_action( 'admin_enqueue_scripts', 'slate_start_load_admin_scripts' );
  */
 function slate_getting_started_page() {
 
-	// License info
-	$license            = get_option( 'slate_license_key' );
-	$status             = get_option( 'slate_license_key_status' );
-
 	// Theme info
 	$theme              = wp_get_theme( 'slate' );
 
@@ -173,52 +169,12 @@ function slate_getting_started_page() {
 			<!-- License panel -->
 			<div id="license-panel" class="panel clearfix">
 				<div class="panel-left">
-					<h3><?php _e( 'Activate your license for seamless updates!', 'slate' ); ?></h3>
 					<p>
-						<?php
-							$license_screenshot = 'http://cl.ly/UKW6/license.jpg?TB_iframe=true&amp;width=1000&amp;height=485';
-							printf( __( 'Add your license key to get theme updates without leaving your dashboard! Find your license key in your Array Dashboard in the <a class="thickbox" href="%s">Downloads</a> section. Save your key and then click the Activate button.', 'slate' ), esc_url( $license_screenshot ) );
-						?>
 					</p>
-
-					<!-- License setting -->
-					<form class="enter-license" method="post" action="options.php">
-						<?php settings_fields( 'slate_license' ); ?>
-
-						<label class="description" for="slate_license_key"><strong><?php _e( 'Enter your license key:', 'slate'); ?></strong></label>
-
-						<input id="license_key_input" name="slate_license_key" type="text" class="regular-text" value="<?php if( isset( $license ) ) { echo $license; } ?>" />
-
-						<?php submit_button( __( 'Save License Key', 'slate' ) ); ?>
-
-						<?php if( false !== $license ) { ?>
-							<div class="activate">
-								<?php if( $status !== false && $status == 'valid' ) { ?>
-									<span class="activate-text"><?php _e( 'Your license is active!', 'slate' ); ?></span>
-									<?php wp_nonce_field( 'slate_license_nonce', 'slate_license_nonce' ); ?>
-									<input type="submit" class="button-secondary" name="edd_theme_license_deactivate" value="<?php _e( 'Deactivate License', 'slate' ); ?>"/>
-								<?php } else if( $license ) {
-									wp_nonce_field( 'slate_license_nonce', 'slate_license_nonce' ); ?>
-									<span class="activate-text"><?php _e( 'License saved! Click to activate &rarr;', 'slate' ); ?></span>
-									<input type="submit" class="button-secondary" name="edd_theme_license_activate" value="<?php _e( 'Activate License', 'slate' ); ?>"/>
-								<?php } ?>
-							</div>
-						<?php } ?>
-					</form><!-- .enter-license -->
 				</div><!-- .panel-left -->
 
 				<div class="panel-right">
 					<div class="panel-aside">
-						<p><strong><?php _e( 'Updating Your Theme', 'slate' ); ?></strong></p>
-
-						<p>
-							<?php
-								$update_notice = 'http://cl.ly/UKJk/update-notice.jpg?TB_iframe=true&width=883&height=520';
-								printf( __( 'Once your license key is activated, you can download and install theme updates by going to Appearance &rarr; Themes. A <a class="thickbox" href="%s">notice</a> will be displayed when an update is available.', 'slate' ), esc_url( $update_notice ) );
-							?>
-						</p>
-
-						<p><?php _e( 'The update process will grab the latest theme files from Array and replace your current theme. Any changes you&apos;ve made to the theme files will be overwritten, so be sure to back up your theme before updating!', 'slate' ); ?></p>
 					</div>
 				</div><!-- .panel-right -->
 			</div><!-- #license-panel -->
@@ -235,13 +191,6 @@ function slate_getting_started_page() {
 
 	<?php
 }
-
-function slate_register_option() {
-	// Creates our license setting in the options table
-	register_setting('slate_license', 'slate_license_key', 'array_theme_sanitize_license' );
-}
-add_action('admin_init', 'slate_register_option');
-
 
 /**
  * Getting Started notice
@@ -276,169 +225,3 @@ function slate_getting_started_nag_ignore() {
 	}
 }
 add_action( 'admin_init', 'slate_getting_started_nag_ignore' );
-
-
-/***********************************************
-* Theme updater
-***********************************************/
-
-// This is the URL our updater / license checker pings. This should be the URL of the site with EDD installed
-define( 'SLATE_SL_STORE_URL', 'https://array.is' );
-
-// The name of your product. This should match the download name in EDD exactly
-define( 'SLATE_SL_THEME_NAME', 'Slate WordPress Theme' );
-
-// The theme version to use in the updater. Stores parent version to avoid child conflicts.
-define( 'SLATE_SL_THEME_VERSION', wp_get_theme( 'slate' )->get( 'Version' ) );
-
-
-/***********************************************
-* Include update class
-***********************************************/
-
-if ( !class_exists( 'EDD_SL_Theme_Updater' ) ) {
-	// Load our custom theme updater
-	include( get_template_directory() . '/includes/admin/theme-updater/theme-updater.php' );
-}
-
-function slate_theme_updater() {
-
-	$slate_license = trim( get_option( 'slate_license_key' ) );
-
-	$edd_updater = new EDD_SL_Theme_Updater( array(
-			'remote_api_url' 	=> SLATE_SL_STORE_URL,			// Our store URL that is running EDD
-			'version' 			=> SLATE_SL_THEME_VERSION, 		// The current theme version we are running
-			'license' 			=> $slate_license,				// The license key (used get_option above to retrieve from DB)
-			'item_name' 		=> SLATE_SL_THEME_NAME,			// The name of this theme
-			'author'			=> 'Array'						// The author's name
-		)
-	);
-}
-add_action( 'admin_init', 'slate_theme_updater' );
-
-
-/***********************************************
-* Gets rid of the local license status option
-* when adding a new one
-***********************************************/
-
-function array_theme_sanitize_license( $new ) {
-	$old = get_option( 'slate_license_key' );
-	if( $old && $old != $new ) {
-		delete_option( 'slate_license_key_status' ); // new license has been entered, so must reactivate
-	}
-	return $new;
-}
-
-
-/***********************************************
-* Illustrates how to activate a license key.
-***********************************************/
-
-function slate_activate_license() {
-
-	if( isset( $_POST['edd_theme_license_activate'] ) ) {
-	 	if( ! check_admin_referer( 'slate_license_nonce', 'slate_license_nonce' ) )
-			return; // get out if we didn't click the Activate button
-
-		global $wp_version;
-
-		$license = trim( get_option( 'slate_license_key' ) );
-
-		$api_params = array(
-			'edd_action' => 'activate_license',
-			'license' => $license,
-			'item_name' => urlencode( SLATE_SL_THEME_NAME )
-		);
-
-		$response = wp_remote_get( add_query_arg( $api_params, SLATE_SL_STORE_URL ), array( 'timeout' => 15, 'sslverify' => false ) );
-
-		if ( is_wp_error( $response ) )
-			return false;
-
-		$license_data = json_decode( wp_remote_retrieve_body( $response ) );
-
-		// $license_data->license will be either "active" or "inactive"
-
-		update_option( 'slate_license_key_status', $license_data->license );
-
-	}
-}
-add_action('admin_init', 'slate_activate_license');
-
-
-/***********************************************
-* Illustrates how to deactivate a license key.
-* This will descrease the site count
-***********************************************/
-
-function slate_deactivate_license() {
-
-	// listen for our activate button to be clicked
-	if( isset( $_POST['edd_theme_license_deactivate'] ) ) {
-
-		// run a quick security check
-	 	if( ! check_admin_referer( 'slate_license_nonce', 'slate_license_nonce' ) )
-			return; // get out if we didn't click the Activate button
-
-		// retrieve the license from the database
-		$license = trim( get_option( 'slate_license_key' ) );
-
-
-		// data to send in our API request
-		$api_params = array(
-			'edd_action'=> 'deactivate_license',
-			'license' 	=> $license,
-			'item_name' => urlencode( SLATE_SL_THEME_NAME ) // the name of our product in EDD
-		);
-
-		// Call the custom API.
-		$response = wp_remote_get( add_query_arg( $api_params, SLATE_SL_STORE_URL ), array( 'timeout' => 15, 'sslverify' => false ) );
-
-		// make sure the response came back okay
-		if ( is_wp_error( $response ) )
-			return false;
-
-		// decode the license data
-		$license_data = json_decode( wp_remote_retrieve_body( $response ) );
-
-		// $license_data->license will be either "deactivated" or "failed"
-		if( $license_data->license == 'deactivated' )
-			delete_option( 'slate_license_key_status' );
-
-	}
-}
-add_action('admin_init', 'slate_deactivate_license');
-
-
-/***********************************************
-* Illustrates how to check if a license is valid
-***********************************************/
-
-function slate_check_license() {
-
-	global $wp_version;
-
-	$license = trim( get_option( 'slate_license_key' ) );
-
-	$api_params = array(
-		'edd_action' => 'check_license',
-		'license' => $license,
-		'item_name' => urlencode( SLATE_SL_THEME_NAME )
-	);
-
-	$response = wp_remote_get( add_query_arg( $api_params, SLATE_SL_STORE_URL ), array( 'timeout' => 15, 'sslverify' => false ) );
-
-	if ( is_wp_error( $response ) )
-		return false;
-
-	$license_data = json_decode( wp_remote_retrieve_body( $response ) );
-
-	if( $license_data->license == 'valid' ) {
-		echo 'valid'; exit;
-		// this license is still valid
-	} else {
-		echo 'invalid'; exit;
-		// this license is no longer valid
-	}
-}
