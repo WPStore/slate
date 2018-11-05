@@ -1,0 +1,614 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"Project-Id-Version: Slate\n"
+"POT-Creation-Date: 2018-11-05 15:50+0100\n"
+"PO-Revision-Date: 2018-11-05 15:50+0100\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.2\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-Flags-xgettext: --add-comments=translators:\n"
+"X-Poedit-WPHeader: style.css\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+
+#: 404.php:11
+msgid "404"
+msgstr ""
+
+#: 404.php:12
+msgid "This page was not found."
+msgstr ""
+
+#: 404.php:18
+msgid ""
+"Sorry, but the page you are looking for has moved or no longer exists. "
+"Please use the search below, or the menu above to locate the missing page."
+msgstr ""
+
+#: archive-array-portfolio.php:27 portfolio.php:54
+msgid "Older Entries"
+msgstr ""
+
+#: archive-array-portfolio.php:30 portfolio.php:57
+msgid "Newer Entries"
+msgstr ""
+
+#: archive.php:14
+msgid "Tag"
+msgstr ""
+
+#: archive.php:17 archive.php:20 archive.php:23
+msgid "Archive"
+msgstr ""
+
+#: archive.php:26 taxonomy-categories.php:10
+msgid "Category"
+msgstr ""
+
+#: archive.php:29
+msgid "posts by"
+msgstr ""
+
+#: archive.php:33 sidebar.php:12
+msgid "Archives"
+msgstr ""
+
+#: author.php:14
+msgid " posts by "
+msgstr ""
+
+#: comments.php:15
+msgid "This post is password protected. Enter the password to view comments."
+msgstr ""
+
+#: comments.php:29
+msgid "&larr; Older Comments"
+msgstr ""
+
+#: comments.php:30
+msgid "Newer Comments &rarr;"
+msgstr ""
+
+#: content-home-blog.php:55 content.php:34
+msgid "Read More"
+msgstr ""
+
+#: content.php:38
+msgid "Read more..."
+msgstr ""
+
+#: content.php:50 includes/widgets/recent-widgets.php:118
+#: includes/widgets/recent-widgets.php:140
+msgid "No Comments"
+msgstr ""
+
+#: content.php:50 includes/widgets/recent-widgets.php:118
+#: includes/widgets/recent-widgets.php:140
+msgid "1 Comment"
+msgstr ""
+
+#: content.php:50 includes/widgets/recent-widgets.php:118
+#: includes/widgets/recent-widgets.php:140
+msgid "% Comments"
+msgstr ""
+
+#: content.php:55
+msgid "Category:"
+msgstr ""
+
+#: content.php:61
+msgid "Tag:"
+msgstr ""
+
+#: content.php:71
+msgid "Share:"
+msgstr ""
+
+#: content.php:73
+msgid "Twitter"
+msgstr ""
+
+#: content.php:77
+msgid "Facebook"
+msgstr ""
+
+#: content.php:81
+msgid "Google+"
+msgstr ""
+
+#: customizer.php:43
+msgid "Slate Style Settings"
+msgstr ""
+
+#: customizer.php:53
+msgid "Logo Upload"
+msgstr ""
+
+#: customizer.php:67
+msgid "Color Scheme"
+msgstr ""
+
+#: customizer.php:71
+msgid "Light"
+msgstr ""
+
+#: customizer.php:72
+msgid "Dark"
+msgstr ""
+
+#: customizer.php:82
+msgid "Link Color"
+msgstr ""
+
+#: customizer.php:93
+msgid "Custom CSS"
+msgstr ""
+
+#: customizer.php:107
+msgid "Enable Slider Autoplay"
+msgstr ""
+
+#: customizer.php:111 customizer.php:187 customizer.php:206 customizer.php:239
+#: customizer.php:272 customizer.php:305
+msgid "Enabled"
+msgstr ""
+
+#: customizer.php:112 customizer.php:188 customizer.php:207 customizer.php:240
+#: customizer.php:273 customizer.php:306
+msgid "Disabled"
+msgstr ""
+
+#: customizer.php:121
+msgid "Slate Header Settings"
+msgstr ""
+
+#: customizer.php:132
+msgid "Header Hidden Text"
+msgstr ""
+
+#: customizer.php:145
+msgid "Header Main Title"
+msgstr ""
+
+#: customizer.php:159
+msgid "Header Subtitle"
+msgstr ""
+
+#: customizer.php:170
+msgid "Slate Homepage Settings"
+msgstr ""
+
+#: customizer.php:183
+msgid "Enable Slider Section"
+msgstr ""
+
+#: customizer.php:202
+msgid "Enable Services Section"
+msgstr ""
+
+#: customizer.php:219
+msgid "Services Section Title"
+msgstr ""
+
+#: customizer.php:235
+msgid "Enable Portfolio Section"
+msgstr ""
+
+#: customizer.php:252
+msgid "Portfolio Section Title"
+msgstr ""
+
+#: customizer.php:268
+msgid "Enable Blog Section"
+msgstr ""
+
+#: customizer.php:285
+msgid "Blog Section Title"
+msgstr ""
+
+#: customizer.php:301
+msgid "Enable Testimonials Section"
+msgstr ""
+
+#: customizer.php:318
+msgid "Testimonial Section Title"
+msgstr ""
+
+#: customizer.php:327
+msgid "Slate Portfolio Settings"
+msgstr ""
+
+#: customizer.php:338
+msgid "Portfolio Page Title"
+msgstr ""
+
+#: customizer.php:352
+msgid "Portfolio Page Subtitle"
+msgstr ""
+
+#: functions.php:71
+msgid "Header Menu"
+msgstr ""
+
+#: functions.php:72
+msgid "Footer Menu"
+msgstr ""
+
+#: functions.php:73
+msgid "Custom Menu"
+msgstr ""
+
+#: functions.php:169
+msgid "Older Posts"
+msgstr ""
+
+#: functions.php:173
+msgid "Newer Posts"
+msgstr ""
+
+#: functions.php:183
+msgid "Header Toggle Icons"
+msgstr ""
+
+#: functions.php:185
+msgid ""
+"This section is for the social media icons widget provided by the Array "
+"Toolkit."
+msgstr ""
+
+#: functions.php:191
+msgid "Services Text Columns"
+msgstr ""
+
+#: functions.php:193
+msgid "This section is for the Services section on the homepage."
+msgstr ""
+
+#: functions.php:199
+msgid "Testimonials"
+msgstr ""
+
+#: functions.php:201
+msgid ""
+"Widgets in this area will be shown on the left side of the note area on the "
+"homepage."
+msgstr ""
+
+#: functions.php:207
+msgid "Sidebar"
+msgstr ""
+
+#: functions.php:209
+msgid "Widgets in this area will be shown on the sidebar of all pages."
+msgstr ""
+
+#: functions.php:217
+msgid "Footer"
+msgstr ""
+
+#: functions.php:219
+msgid ""
+"Widgets in this area will be shown own on the left side of the footer of all "
+"pages."
+msgstr ""
+
+#: functions.php:236
+#, php-format
+msgid "<cite class=\"fn\">%s</cite>"
+msgstr ""
+
+#: functions.php:238
+#, php-format
+msgid "%1$s at %2$s"
+msgstr ""
+
+#: functions.php:238
+msgid "(Edit)"
+msgstr ""
+
+#: functions.php:252
+msgid "Your comment is awaiting moderation."
+msgstr ""
+
+#: functions.php:284
+#, php-format
+msgid "Page %s"
+msgstr ""
+
+#: includes/admin/getting-started/getting-started.php:38
+#: includes/admin/getting-started/getting-started.php:39
+msgid "About Slate"
+msgstr ""
+
+#: includes/admin/getting-started/getting-started.php:101
+msgid ""
+"There seems to be a problem retrieving the latest updates information from "
+"Array. Please check back later."
+msgstr ""
+
+#: includes/admin/getting-started/getting-started.php:116
+#, php-format
+msgid "Getting started with %1$s"
+msgstr ""
+
+#: includes/admin/getting-started/getting-started.php:118
+#, php-format
+msgid ""
+"Thanks for purchasing %1$s! We truly appreciate the support and the "
+"opportunity to share our work with you. Please visit the tabs below to get "
+"started setting up your theme!"
+msgstr ""
+
+#: includes/admin/getting-started/getting-started.php:124
+msgid "Help"
+msgstr ""
+
+#: includes/admin/getting-started/getting-started.php:125
+msgid "License"
+msgstr ""
+
+#: includes/admin/getting-started/getting-started.php:126
+msgid "Changelog"
+msgstr ""
+
+#: includes/admin/getting-started/getting-started.php:127
+msgid "View/Open Issues on GitLab"
+msgstr ""
+
+#: includes/admin/getting-started/getting-started.php:127
+msgid "GitLab Issues &rarr;"
+msgstr ""
+
+#: includes/admin/getting-started/getting-started.php:153
+msgid ""
+"This help file feed seems to be temporarily down. You can view the help file "
+"on Array in the mean time."
+msgstr ""
+
+#: includes/admin/getting-started/getting-started.php:153
+msgid "Help File &rarr;"
+msgstr ""
+
+#: includes/admin/getting-started/getting-started.php:172
+msgid "Install the Array Toolkit"
+msgstr ""
+
+#: includes/admin/getting-started/getting-started.php:173
+msgid "The Array Toolkit is a plugin that adds various features to your theme."
+msgstr ""
+
+#: includes/admin/getting-started/getting-started.php:173
+msgid "requires the Array Toolkit to enable the following features:"
+msgstr ""
+
+#: includes/admin/getting-started/getting-started.php:177
+msgid "Portfolio Items"
+msgstr ""
+
+#: includes/admin/getting-started/getting-started.php:181
+msgid "Custom Galleries"
+msgstr ""
+
+#: includes/admin/getting-started/getting-started.php:186
+msgid "Slider Items"
+msgstr ""
+
+#: includes/admin/getting-started/getting-started.php:190
+msgid "Install Array toolkit"
+msgstr ""
+
+#: includes/admin/getting-started/getting-started.php:190
+msgid "Install Array Toolkit Plugin"
+msgstr ""
+
+#: includes/admin/getting-started/getting-started.php:203
+msgid "Slate is free and 100% GPL-licensed!"
+msgstr ""
+
+#: includes/admin/getting-started/getting-started.php:205
+msgid "It was created by Array in 2012 and retired in 2015."
+msgstr ""
+
+#: includes/admin/getting-started/getting-started.php:206
+msgid "Picked up in 2016 by WPStore.io."
+msgstr ""
+
+#: includes/admin/getting-started/getting-started.php:212
+msgid "About WPStore.io"
+msgstr ""
+
+#: includes/admin/getting-started/getting-started.php:213
+msgid "@TODO text about wpstore and why picking up this"
+msgstr ""
+
+#: includes/admin/getting-started/getting-started.php:216
+msgid "Updating the theme"
+msgstr ""
+
+#: includes/admin/getting-started/getting-started.php:217
+msgid "The theme will be updated through GitLab."
+msgstr ""
+
+#: includes/admin/getting-started/getting-started.php:225
+msgid "Latest Theme Updates"
+msgstr ""
+
+#: includes/admin/metabox/metabox.php:7
+msgid "Slide Link"
+msgstr ""
+
+#: includes/admin/metabox/metabox.php:14
+msgid "Where would you like your slide to link to?"
+msgstr ""
+
+#: includes/admin/metabox/metabox.php:37
+msgid "Video"
+msgstr ""
+
+#: includes/admin/metabox/metabox.php:46
+msgid "Subtitle"
+msgstr ""
+
+#: includes/admin/metabox/metabox.php:74
+#, php-format
+msgid ""
+"Add video to your page by entering the video's <a class=\"thickbox\" href="
+"\"%1$s\">embed code</a> in the box above (optional). "
+msgstr ""
+
+#: includes/admin/metabox/metabox.php:144
+msgid "Add a subtitle for your page (optional)."
+msgstr ""
+
+#: includes/widgets/recent-portfolio.php:18
+msgid "Slate Sidebar Portfolio Widget"
+msgstr ""
+
+#: includes/widgets/recent-portfolio.php:77
+msgid "Title:"
+msgstr ""
+
+#: includes/widgets/recent-portfolio.php:81
+msgid "Number to Show:"
+msgstr ""
+
+#: includes/widgets/recent-widgets.php:18
+msgid ""
+"A tabbed widget for displaying recent posts, popular posts, recent comments, "
+"and a tag cloud."
+msgstr ""
+
+#: includes/widgets/recent-widgets.php:28
+msgid "Slate Recent Posts Widget"
+msgstr ""
+
+#: includes/widgets/recent-widgets.php:206
+msgid "Entering 0 for a count will hide it on your site."
+msgstr ""
+
+#: includes/widgets/recent-widgets.php:209
+msgid "Recent Posts Count"
+msgstr ""
+
+#: includes/widgets/recent-widgets.php:214
+msgid "Popular Posts Count"
+msgstr ""
+
+#: includes/widgets/recent-widgets.php:219
+msgid "Latest Comment Count"
+msgstr ""
+
+#: includes/widgets/recent-widgets.php:224
+msgid "Tag Count"
+msgstr ""
+
+#: includes/widgets/text-column.php:18
+msgid "Slate Text Column Widget"
+msgstr ""
+
+#: includes/widgets/text-column.php:28
+msgid "Slate Text Column"
+msgstr ""
+
+#: includes/widgets/text-column.php:92
+msgid "Column Title"
+msgstr ""
+
+#: includes/widgets/text-column.php:97
+msgid "Column Title Link"
+msgstr ""
+
+#: includes/widgets/text-column.php:102
+msgid "Column Icon"
+msgstr ""
+
+#: includes/widgets/text-column.php:107
+msgid "Column Content"
+msgstr ""
+
+#: search.php:12
+#, php-format
+msgid "Search Results for: %s"
+msgstr ""
+
+#: searchform.php:3
+msgid "Search this site..."
+msgstr ""
+
+#: searchform.php:4
+msgid "Search"
+msgstr ""
+
+#: sidebar.php:19
+msgid "Meta"
+msgstr ""
+
+#: single-array-portfolio.php:23
+msgid "<span><i class=\"icon-caret-left\"></i> Previous</span>"
+msgstr ""
+
+#: single-array-portfolio.php:24
+msgid "<span>Next <i class=\"icon-caret-right\"></i></span>"
+msgstr ""
+
+#: single-array-portfolio.php:59
+msgid "Details"
+msgstr ""
+
+#: single-array-portfolio.php:62
+msgid "Date:"
+msgstr ""
+
+#: single-array-portfolio.php:65
+msgid "Category: "
+msgstr ""
+
+#: single.php:31
+msgid "Previous Post"
+msgstr ""
+
+#: single.php:32
+msgid "Next Post"
+msgstr ""
+
+#. Theme Name of the plugin/theme
+msgid "Slate"
+msgstr ""
+
+#. Theme URI of the plugin/theme
+msgid "https://gitlab.com/wpstore-themes/slate"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid "A super clean responsive theme for showing off your latest projects."
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "WP-Store.io"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "https://www.wp-store.io"
+msgstr ""
+
+#. Template Name of the plugin/theme
+msgid "Full-Width"
+msgstr ""
+
+#. Template Name of the plugin/theme
+msgid "Homepage"
+msgstr ""
+
+#. Template Name of the plugin/theme
+msgid "Portfolio"
+msgstr ""
