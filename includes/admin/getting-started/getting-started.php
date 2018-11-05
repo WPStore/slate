@@ -1,7 +1,7 @@
 <?php
 /**
  * @author    WP-Store.io <code@wp-store.io>
- * @copyright Copyright (c) 2016, WP-Store.io
+ * @copyright Copyright (c) 2016-2019, WP-Store.io
  * @copyright Copyright (c) 2012-2016, Array
  * @license   http://www.gnu.org/licenses/gpl-2.0.html GPL-2.0+
  * @package   WPStore\Themes\Slate
@@ -92,13 +92,12 @@ class Slate_GettingStarted {
 		// Lowercase theme name for resources links
 		$theme_name_lower   = get_template();
 
-		// Grab the change log from array.is for display in the Latest Updates tab
-		// @TODO from GitLab repo CHANGELOG.md
-		$changelog = wp_remote_get( 'https://array.is/themes/slate-wordpress-theme/changelog/' );
+		// Grab the CHANGELOG and parse proper HTML output
+		$changelog = wp_remote_get( 'https://raw.githubusercontent.com/WPStore/slate/master/CHANGELOG.md' );
 		if( $changelog && !is_wp_error( $changelog ) ) {
 			$changelog = $changelog['body'];
 		} else {
-			$changelog = __( 'There seems to be a problem retrieving the latest updates information from Array. Please check back later.', 'slate' );
+			$changelog = __( 'There seems to be a problem retrieving the CHANGELOG from the GitHub repository. Please check back later.', 'slate' );
 		}
 
 		// Array Toolkit URL
@@ -124,7 +123,7 @@ class Slate_GettingStarted {
 					<a class="nav-tab nav-tab-active" href="#"><?php _e( 'Help', 'slate' ); ?></a>
 					<a class="nav-tab" href="#"><?php _e( 'License', 'slate' ); ?></a>
 					<a class="nav-tab" href="#"><?php _e( 'Changelog', 'slate' ); ?></a>
-					<a class="nav-tab" href="https://gitlab.com/wpstore-themes/slate/issues" title="<?php esc_attr_e( __( 'View/Open Issues on GitLab', 'slate' ) ); ?>" target="_blank"><?php _e( 'GitLab Issues &rarr;', 'slate' ); ?></a>
+					<a class="nav-tab" href="https://github.com/WPStore/slate/issues" title="<?php esc_attr_e( __( 'View/Open Issues on GitHub', 'slate' ) ); ?>" target="_blank"><?php _e( 'GitHub Issues &rarr;', 'slate' ); ?></a>
 				</h2>
 
 				<!-- Help file panel -->
@@ -200,10 +199,10 @@ class Slate_GettingStarted {
 				<!-- License panel -->
 				<div id="license-panel" class="panel clearfix">
 					<div class="panel-left">
-						<h3><?php _e( 'Slate is free and 100% GPL-licensed!', 'slate' ); ?></h3>
+						<h3><?php esc_html_e( 'Slate is free and 100% GPL-licensed!', 'slate' ); ?></h3>
 						<p>
-							<?php _e( 'It was created by Array in 2012 and retired in 2015.', 'slate' ); ?>
-							<?php _e( 'Picked up in 2016 by WPStore.io.', 'slate' ); ?>
+							<?php esc_html_e( 'It was created by Array in 2012 and retired in 2015.', 'slate' ); ?>
+							<?php printf( esc_html__( 'Picked up in 2016 by %s.', 'slate' ), '<a href="https://www.wpstore.io" target="_blank">WPStore.io</a>' ); ?>
 						</p>
 					</div><!-- .panel-left -->
 
@@ -222,7 +221,7 @@ class Slate_GettingStarted {
 				<!-- Updates panel -->
 				<div id="updates-panel" class="panel">
 					<div class="panel-left">
-						<h3><?php _e( 'Latest Theme Updates', 'slate' ); ?></h3>
+						<h3><?php _e( 'Slate Changelog', 'slate' ); ?></h3>
 						<p><?php echo $changelog; ?></p>
 					</div><!-- .panel-left -->
 				</div><!-- #updates-panel -->
